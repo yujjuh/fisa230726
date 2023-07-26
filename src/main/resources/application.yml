@@ -1,0 +1,22 @@
+server:
+  port: 80
+  servlet:
+    context-path: /guestbook
+    
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: rootroot
+    url: jdbc:mysql://user16-mysql.cnqwxpaw1dij.ap-northeast-2.rds.amazonaws.com:3306/fisa?characterEncoding=UTF-8
+    username: root
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true 
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp

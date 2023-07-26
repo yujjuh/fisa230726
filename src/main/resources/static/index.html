@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<button id="reqBtn">모든 데이터 검색</button>
+	<script>
+		
+		document.querySelector("#reqBtn").addEventListener("click", function(){
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function(resData) {   //응답 완료시 실행되는 영역
+				//alert("정상");
+				alert(this.responseText); 
+				//console.log(resData);
+				document.querySelector("#dataView").innerHTML = this.responseText;
+			}
+			xhttp.open("GET", "deptall");  //모든 검색 
+			xhttp.send();
+			
+		});
+		
+		
+	</script>
+	
+	
+	<button class="reqBtn2">모든 데이터 검색 1</button>
+	<button class="reqBtn2">모든 데이터 검색 2</button>
+	
+	<script>
+		
+		document.querySelector("#reqBtn").addEventListener("click", function(){
+			//alert(1);
+			document.querySelectorAll(".reqBtn2")[1].innerHTML = "혁준";
+		});
+		
+	</script>
+	
+	
+	
+	<br><hr><br>
+	<div id="dataView"></div>
+	
+	<script>
+		/* querySelector() :  반환 데이터 단수
+							 #, . , tag 명 단 html문서에 하나만 있는것 검색시 유용
+							 index 의미 없음
+		querySelectorAll() : 반환 데이터 복수 
+							. 또는 tag 명으로 다수의 tag 검색
+							list로 반환
+							index 로 데이터 반환 (index로 데이터)
+							
+		firstChild : 검색된 tag의 첫번째 포함된 자식, tag일수도, 일반 text일수도 있음
+		nodeValue : text인 경우 text 데이터 제공 변수
+		nodeName : tag 이름 반환 
+		*/
+		//console.log(document.querySelector("#reqBtn")[0]); //undefined
+		
+		
+		
+		//console.log(document.querySelector(".reqBtn2")[0]); //undefined
+		//console.log(document.querySelectorAll(".reqBtn2")[1]); //<button class="reqBtn2">모든 데이터 검색 2</button>
+		
+		
+		
+		//<button id="reqBtn">모든 데이터 검색</button>
+		//console.log(document.querySelector("#reqBtn").firstChild.nodeValue); //모든 데이터 검색
+		//alert(document.querySelector("#reqBtn").firstChild.nodeValue); //모든 데이터 검색
+		
+	</script>
+	
+</body>
+</html>
