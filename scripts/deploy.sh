@@ -1,4 +1,5 @@
 #!/bin/bash
+# test
 
 REPOSITORY=/home/ubuntu/test
 PROJECT_NAME=step02_gBookGradle
